@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CardIoExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="dFC-rK-AXK">
+                                <rect key="frame" x="132" y="293.5" width="111" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNP-el-mqb">
+                                        <rect key="frame" x="0.0" y="0.0" width="111" height="30"/>
+                                        <state key="normal" title="Using Controller"/>
+                                        <connections>
+                                            <action selector="scanCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ktS-fN-KfI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X3A-xS-80n">
+                                        <rect key="frame" x="0.0" y="50" width="111" height="30"/>
+                                        <state key="normal" title="Using View"/>
+                                        <connections>
+                                            <segue destination="G47-wH-DuV" kind="show" id="qme-lU-Thr"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="dFC-rK-AXK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HJA-dH-8kk"/>
+                            <constraint firstItem="dFC-rK-AXK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="JjL-TN-TZl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Scan Card View Controller-->
+        <scene sceneID="AVi-04-eb7">
+            <objects>
+                <viewController id="G47-wH-DuV" customClass="ScanCardViewController" customModule="CardIoExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4LI-4E-LwL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ETb-IR-ZTV">
+                                <rect key="frame" x="149" y="115" width="77" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p9M-0s-e1m" customClass="CardIOView">
+                                <rect key="frame" x="20" y="166" width="335" height="471"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ETb-IR-ZTV" firstAttribute="centerX" secondItem="ln5-4O-kUQ" secondAttribute="centerX" id="0JP-Ie-QfS"/>
+                            <constraint firstItem="ln5-4O-kUQ" firstAttribute="bottom" secondItem="p9M-0s-e1m" secondAttribute="bottom" constant="30" id="CzX-sb-aU5"/>
+                            <constraint firstItem="ln5-4O-kUQ" firstAttribute="trailing" secondItem="p9M-0s-e1m" secondAttribute="trailing" constant="20" id="FMj-1W-FeN"/>
+                            <constraint firstItem="p9M-0s-e1m" firstAttribute="top" secondItem="ETb-IR-ZTV" secondAttribute="bottom" constant="30" id="cIU-nP-rNf"/>
+                            <constraint firstItem="p9M-0s-e1m" firstAttribute="leading" secondItem="ln5-4O-kUQ" secondAttribute="leading" constant="20" id="dJX-Sw-ARf"/>
+                            <constraint firstItem="ETb-IR-ZTV" firstAttribute="top" secondItem="ln5-4O-kUQ" secondAttribute="top" constant="95" id="zNE-KX-evQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ln5-4O-kUQ"/>
+                    </view>
+                    <connections>
+                        <outlet property="cardLabel" destination="ETb-IR-ZTV" id="Dhi-Ih-HDl"/>
+                        <outlet property="scanView" destination="p9M-0s-e1m" id="9sO-WC-nSx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2sY-mE-oAl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1400.8" y="82.3088455772114"/>
+        </scene>
+    </scenes>
+</document>

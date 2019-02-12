@@ -1,0 +1,6 @@
+framework module Pods_CardIoExampleTests {
+  umbrella header "Pods-CardIoExampleTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
