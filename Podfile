@@ -7,6 +7,8 @@ target 'CardIoExample' do
 
   # Pods for CardIoExample
 	pod 'CardIO' 
+	pod 'PayCardsRecognizer'
+
 
   target 'CardIoExampleTests' do
     inherit! :search_paths

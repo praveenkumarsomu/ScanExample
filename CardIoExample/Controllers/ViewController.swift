@@ -36,6 +36,10 @@ extension ViewController:CardIOPaymentViewControllerDelegate{
     func userDidProvide(_ cardInfo: CardIOCreditCardInfo!, in paymentViewController: CardIOPaymentViewController!) {
         print("Received card info. Number:\(cardInfo.redactedCardNumber ?? ""), expiry: \(cardInfo.expiryMonth )/\(cardInfo.expiryYear ), cvv: \(cardInfo.cvv ?? "")")
         paymentViewController.dismiss(animated: true, completion: nil)
+        let cardDetailsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "cardDetailsVC") as! CardDetailsViewController
+        let cardModel = CardModel(number: cardInfo.redactedCardNumber, cvvNumber: cardInfo.cvv, expiry:"\(cardInfo.expiryMonth )/\(cardInfo.expiryYear)")
+        cardDetailsVC.cardModel = cardModel
+        navigationController?.pushViewController(cardDetailsVC, animated: true)
     }
     
     

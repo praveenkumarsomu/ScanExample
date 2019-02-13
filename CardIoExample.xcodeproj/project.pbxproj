@@ -10,6 +10,9 @@
 		45C9CD2E9E3987C694EC8490 /* Pods_CardIoExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92CF3DFE954114900456E1B9 /* Pods_CardIoExampleTests.framework */; };
 		53AF61A06A9615A7B5F1CC4F /* Pods_CardIoExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3960EADCD3BEE8DEEF6C8020 /* Pods_CardIoExample.framework */; };
 		589CA47DFBAA9D976046E4DE /* Pods_CardIoExampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34390F31FBF0A05E0DA23981 /* Pods_CardIoExampleUITests.framework */; };
+		7F28E0942212E1FD00D13F8F /* PaycardsRecognizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F28E0932212E1FD00D13F8F /* PaycardsRecognizerViewController.swift */; };
+		7F28E0962212E7A600D13F8F /* CardDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F28E0952212E7A600D13F8F /* CardDetailsViewController.swift */; };
+		7F28E0992212E87900D13F8F /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F28E0982212E87900D13F8F /* CardModel.swift */; };
 		7FFA51632212B027000DE82A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA51622212B027000DE82A /* AppDelegate.swift */; };
 		7FFA51652212B027000DE82A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA51642212B027000DE82A /* ViewController.swift */; };
 		7FFA51682212B027000DE82A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FFA51662212B027000DE82A /* Main.storyboard */; };
@@ -42,6 +45,9 @@
 		34390F31FBF0A05E0DA23981 /* Pods_CardIoExampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CardIoExampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3960EADCD3BEE8DEEF6C8020 /* Pods_CardIoExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CardIoExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		637456CF1D72B7ED05F07AFD /* Pods-CardIoExampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardIoExampleUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CardIoExampleUITests/Pods-CardIoExampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7F28E0932212E1FD00D13F8F /* PaycardsRecognizerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaycardsRecognizerViewController.swift; sourceTree = "<group>"; };
+		7F28E0952212E7A600D13F8F /* CardDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsViewController.swift; sourceTree = "<group>"; };
+		7F28E0982212E87900D13F8F /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		7FFA515F2212B027000DE82A /* CardIoExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardIoExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FFA51622212B027000DE82A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FFA51642212B027000DE82A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +109,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7F28E0972212E85700D13F8F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7FFA51642212B027000DE82A /* ViewController.swift */,
+				7FFA51902212B18F000DE82A /* ScanCardViewController.swift */,
+				7F28E0932212E1FD00D13F8F /* PaycardsRecognizerViewController.swift */,
+				7F28E0952212E7A600D13F8F /* CardDetailsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		7FFA51562212B027000DE82A = {
 			isa = PBXGroup;
 			children = (
@@ -130,8 +147,8 @@
 			children = (
 				7FFA51622212B027000DE82A /* AppDelegate.swift */,
 				7FFA51932212B455000DE82A /* DummyViewController.h */,
-				7FFA51642212B027000DE82A /* ViewController.swift */,
-				7FFA51902212B18F000DE82A /* ScanCardViewController.swift */,
+				7F28E0982212E87900D13F8F /* CardModel.swift */,
+				7F28E0972212E85700D13F8F /* Controllers */,
 				7FFA51662212B027000DE82A /* Main.storyboard */,
 				7FFA51692212B028000DE82A /* Assets.xcassets */,
 				7FFA516B2212B028000DE82A /* LaunchScreen.storyboard */,
@@ -183,6 +200,7 @@
 				7FFA515B2212B027000DE82A /* Sources */,
 				7FFA515C2212B027000DE82A /* Frameworks */,
 				7FFA515D2212B027000DE82A /* Resources */,
+				43753390B6DA64C43E09CE9C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -325,6 +343,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		43753390B6DA64C43E09CE9C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CardIoExample/Pods-CardIoExample-frameworks.sh",
+				"${PODS_ROOT}/PayCardsRecognizer/Source/PayCardsRecognizer.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PayCardsRecognizer.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CardIoExample/Pods-CardIoExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		47500BEAB7F8D1BD14480603 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -377,8 +417,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FFA51652212B027000DE82A /* ViewController.swift in Sources */,
+				7F28E0962212E7A600D13F8F /* CardDetailsViewController.swift in Sources */,
 				7FFA51912212B18F000DE82A /* ScanCardViewController.swift in Sources */,
 				7FFA51632212B027000DE82A /* AppDelegate.swift in Sources */,
+				7F28E0942212E1FD00D13F8F /* PaycardsRecognizerViewController.swift in Sources */,
+				7F28E0992212E87900D13F8F /* CardModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,6 +601,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J53NLM32CH;
 				INFOPLIST_FILE = CardIoExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -580,6 +624,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J53NLM32CH;
 				INFOPLIST_FILE = CardIoExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

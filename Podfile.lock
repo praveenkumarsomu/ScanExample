@@ -1,16 +1,20 @@
 PODS:
   - CardIO (5.4.1)
+  - PayCardsRecognizer (1.1.4)
 
 DEPENDENCIES:
   - CardIO
+  - PayCardsRecognizer
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - CardIO
+    - PayCardsRecognizer
 
 SPEC CHECKSUMS:
   CardIO: 56983b39b62f495fc6dae9ad7cf875143df06443
+  PayCardsRecognizer: b939eec21c6890d57c9f22cb8856517922b097a2
 
-PODFILE CHECKSUM: cfe36c3697c4a768318fe8fea53ef7d7249f3a7d
+PODFILE CHECKSUM: 7a6e35b0fcd0ed9b947c76148663cbc999b6a3e3
 
 COCOAPODS: 1.5.3

@@ -34,7 +34,10 @@ extension ScanCardViewController:CardIOViewDelegate{
     func cardIOView(_ cardIOView: CardIOView!, didScanCard cardInfo: CardIOCreditCardInfo!) {
         cardLabel.text = "Scan card successful"
         print("Received card info. Number:\(cardInfo.redactedCardNumber ?? ""), expiry: \(cardInfo.expiryMonth )/\(cardInfo.expiryYear ), cvv: \(cardInfo.cvv ?? "")")
-        cardIOView.isHidden = true
+        let cardDetailsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "cardDetailsVC") as! CardDetailsViewController
+        let cardModel = CardModel(number: cardInfo.redactedCardNumber, cvvNumber: cardInfo.cvv, expiry:"\(cardInfo.expiryMonth )/\(cardInfo.expiryYear)")
+        cardDetailsVC.cardModel = cardModel
+        navigationController?.pushViewController(cardDetailsVC, animated: true)
     }
 
 }
